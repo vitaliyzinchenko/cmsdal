@@ -464,7 +464,7 @@ public class CmsMdProcessor {
      */
     public Map<Integer, List<CmsClazzRelation>> getAllTargets() {
         return relationMapper.getAllTargets().stream().collect(toMap(CmsClazzRelation::getRelationId,
-                (r) -> new ArrayList<>(singletonList(r)),
+                (r) -> new ArrayList<CmsClazzRelation>(singletonList(r)),
                 (a, b) -> {
                     a.addAll(b);
                     return a;
